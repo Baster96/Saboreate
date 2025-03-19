@@ -871,4 +871,10 @@ h2 {
     .contact-header{
         height: 30rem;
     }
+
+    .contact-header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
