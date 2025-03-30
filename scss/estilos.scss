@@ -1,11 +1,24 @@
+// Mixins
+@mixin transition($args...) {
+  transition: $args;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Variables
 $white: #fff;
 $black: #000;
 $primary-red: #b52d2d;
-$nav-bg: #af2b2b; // rgb(175, 43, 43)
+$nav-bg: #af2b2b; // rgb(175,43,43)
 $hover-red: #880000;
 $bg-grey: #ebebeb;
 $button-hover: #11b31f;
 
+// Reset y estilos globales
 * {
   padding: 0;
   margin: 0;
@@ -16,6 +29,7 @@ body {
   font-family: "Poppins", serif;
 }
 
+// Navegación
 nav {
   position: fixed;
   width: 100%;
@@ -40,7 +54,7 @@ nav {
         text-decoration: none;
         font-size: 1.2em;
         color: $white;
-        transition: background-color 0.3s ease-in-out, transform 0.2s;
+        @include transition(background-color 0.3s ease-in-out, transform 0.2s);
         margin-right: 1rem;
         padding: 1rem;
 
@@ -54,10 +68,11 @@ nav {
   }
 }
 
+// Opciones de navegación con clase .navbar-nav
 .navbar-nav {
   .nav-link {
     font-size: 1.2em;
-    transition: background-color 0.3s ease-in-out, transform 0.2s;
+    @include transition(background-color 0.3s ease-in-out, transform 0.2s);
     margin-right: 1rem;
     padding: 1rem;
 
@@ -76,10 +91,9 @@ nav {
   }
 }
 
+// Logo
 .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   height: auto;
   width: 2rem;
 
@@ -89,11 +103,13 @@ nav {
   }
 }
 
+// Títulos
 h2 {
   color: $primary-red;
   font-size: 2rem;
 }
 
+// Sección Hero e índices
 .hero,
 .hero-index {
   position: relative;
@@ -141,6 +157,7 @@ h2 {
   }
 }
 
+// Botón general
 .btn {
   display: inline-block;
   margin-top: 20px;
@@ -150,7 +167,7 @@ h2 {
   text-decoration: none;
   border-radius: 5px;
   font-size: 1.2rem;
-  transition: all 0.3s ease-in-out;
+  @include transition(all 0.3s ease-in-out);
 
   &:hover {
     background-color: #7e1e1e;
@@ -158,6 +175,7 @@ h2 {
   }
 }
 
+// Contenedores e imágenes
 .contenedor {
   display: flex;
   justify-content: space-between;
@@ -195,6 +213,7 @@ h2 {
   border: 1px solid $black;
 }
 
+// Iconos
 .wp {
   height: 5vh;
   width: 5vh;
@@ -206,6 +225,7 @@ h2 {
   width: 5vh;
 }
 
+// Redes sociales
 .redes {
   list-style: none;
   display: flex;
@@ -218,6 +238,7 @@ h2 {
   }
 }
 
+// Sección inferior
 .contbot {
   margin-top: 15rem;
   text-align: center;
@@ -239,6 +260,7 @@ h2 {
   }
 }
 
+// Explore Restaurants
 .explore-restaurants {
   text-align: center;
   padding: 50px;
@@ -254,7 +276,7 @@ h2 {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    transition: 0.3s;
+    @include transition(0.3s);
 
     &:hover {
       background-color: #7e1e1e;
@@ -263,6 +285,7 @@ h2 {
   }
 }
 
+// Títulos y Portadas
 .titulo {
   text-align: center;
 }
@@ -305,6 +328,7 @@ h2 {
   margin-left: 5rem;
 }
 
+// About Intro
 .about-intro {
   text-align: center;
   padding: 50px;
@@ -322,6 +346,7 @@ h2 {
   }
 }
 
+// How It Works
 .how-it-works {
   background-color: $white;
   padding: 80px 0;
@@ -363,6 +388,7 @@ h2 {
   }
 }
 
+// Benefits
 .benefit {
   text-align: center;
   background-color: $bg-grey;
@@ -408,6 +434,7 @@ h2 {
   }
 }
 
+// Restaurant List & Card
 .restaurant-list {
   display: grid;
   grid-template-columns: 30% repeat(2, 1fr);
@@ -459,11 +486,12 @@ h2 {
     &:hover {
       background-color: green;
       color: $white;
-      transition: 2s;
+      @include transition(2s);
     }
   }
 }
 
+// Page Title
 .page-title {
   text-align: center;
   padding: 5rem;
@@ -484,6 +512,7 @@ h2 {
   }
 }
 
+// Featured Restaurants
 .featured-restaurants {
   text-align: center;
   padding: 60px 20px;
@@ -504,6 +533,7 @@ h2 {
   }
 }
 
+// Restaurant Map
 .restaurant-map {
   text-align: center;
   padding: 60px 20px;
@@ -533,6 +563,7 @@ h2 {
   }
 }
 
+// Opiniones y Reviews
 .opiniones {
   text-align: center;
   font-size: 2.5rem;
@@ -581,6 +612,7 @@ h2 {
   }
 }
 
+// Contacto
 .contact-header {
   text-align: center;
   background-color: $primary-red;
@@ -652,7 +684,7 @@ h2 {
     border-radius: 5px;
     font-size: 1.2rem;
     cursor: pointer;
-    transition: background-color 2.5s;
+    @include transition(background-color 2.5s);
 
     &:hover {
       background-color: $button-hover;
@@ -682,6 +714,7 @@ h2 {
   }
 }
 
+// Restaurant Card Blog
 .restaurant-cardblog {
   display: inline-block;
   background-color: $white;
@@ -725,11 +758,12 @@ h2 {
     &:hover {
       background-color: green;
       color: $white;
-      transition: 2s;
+      @include transition(2s);
     }
   }
 }
 
+// Media Queries
 @media screen and (max-width: 1084px) {
   .contenedor {
     width: 100%;
