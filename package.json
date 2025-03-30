@@ -1,0 +1,20 @@
+{
+  "name": "desarrollo-web",
+  "version": "1.0.0",
+  "description": "Saboreate es una plataforma web dedicada a descubrir y explorar los mejores restaurantes de Tucumán. A través de fotos, videos y descripciones detalladas, ayudamos a las personas a encontrar el lugar ideal para su próxima experiencia gastronómica.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Baster96/Saboreate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Baster96/Saboreate/issues"
+  },
+  "homepage": "https://github.com/Baster96/Saboreate#readme"
+}
